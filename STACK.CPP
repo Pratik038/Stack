@@ -10,8 +10,12 @@ struct Stack{
 
 Stack* createStack(int cap){
 	Stack *stack=new Stack;
+	if(!stack)
+		return NULL;
 	stack->capacity=cap;
 	stack->array=new int;
+	if(!stack->array)
+		return NULL:
 	stack->top=-1;
 	return stack;
 }
