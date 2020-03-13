@@ -13,7 +13,7 @@ Stack* createStack(int cap){
 	if(!stack)
 		return NULL;
 	stack->capacity=cap;
-	stack->array=new int;
+	stack->array=new int[stack->capacity];
 	if(!stack->array)
 		return NULL:
 	stack->top=-1;
