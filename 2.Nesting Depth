@@ -1,0 +1,41 @@
+#include <bits/stdc++.h>
+#include<string>
+using namespace std;
+
+int main() {
+	int t; cin>>t;
+	int x=1;
+	while(t--){
+	    string s;
+	    cin>>s;
+	        cout<<"case #"<<x++<<": ";
+	        char prev=s[0];
+	        if(s[0]!='0'){
+	        int n=s[0]-'0';  
+	        while(n--) cout<<"(";
+	        }
+	        cout<<s[0];
+	        for(int i=1;i<s.length();i++)
+	        {
+	            if(s[i]==prev) cout<<s[i];
+	            else if(s[i]<prev)
+	            {
+	                int loop=prev-s[i];
+	                while(loop--) cout<<")";
+	                cout<<s[i];
+	            }
+	            else 
+	            {
+	                int loop=s[i]-prev;
+	                while(loop--) cout<<"(";
+	                cout<<s[i];
+	            }
+	           prev=s[i];
+	        }
+	        int loop=s[s.length()-1]-'0';
+	        while(loop--) cout<<")";
+	    cout<<endl;
+	}
+	
+	return 0;
+}
